@@ -6,6 +6,4 @@ WORKDIR /app
 
 COPY . /app/
 
-EXPOSE 80
-
-CMD ["php", "-S", "0.0.0.0:80", "-t", "/app"]
+CMD ["sh", "-c", "php -S 0.0.0.0:${PORT:-80} -t /app"]
