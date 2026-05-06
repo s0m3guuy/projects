@@ -1,14 +1,14 @@
+<?php
+session_start();
+
+if (isset($_SESSION['username'])) {
+    header("Location: dashboard.php");
+    exit;
+}
+?>
+
 <head>
     <link rel="stylesheet" href="login.css">
-    <?php
-    session_start();
-
-    if (isset($_SESSION['username'])) {
-        header("Location: dashboard.php");
-        exit;
-    }
-    ?>
-
 </head>
 
 
