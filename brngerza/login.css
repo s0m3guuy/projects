@@ -1,0 +1,59 @@
+body{
+    background-image: url('autumn.avif');
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+
+}
+
+.base{
+    width: 60%;
+    height: 80%;
+    display: flex;
+}
+
+.title{
+    flex: 1;
+    background-color: rgba(236, 134, 0, 0.57);
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    font-size: 40px;
+}
+
+.container{
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+}
+
+form{
+    width: 100%;
+    padding: 40px;
+    font-size: 25px;
+    color:rgba(236, 134, 0);
+}
+input[name=uname],
+input[name=psw]{
+    width: 70%;
+    padding: 12px 0;
+    margin: 8px 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 1px solid #aaa;
+    font-size: 20px;
+    outline: none;
+}
+button{
+    padding: 8px 20px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color:rgba(236, 134, 0, 0.7);
+    border-radius: 10px;
+}
