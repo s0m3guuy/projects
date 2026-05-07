@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 
 <?php
 require 'auth.php';
