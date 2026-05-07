@@ -1,4 +1,3 @@
-
     <?php
     require 'auth.php';
     require 'koneksi.php';
