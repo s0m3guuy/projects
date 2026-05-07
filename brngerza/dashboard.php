@@ -1,54 +1,56 @@
 <!DOCTYPE html>
+
+<?php
+require 'auth.php';
+require 'koneksi.php';
+
+// Get statistics for dashboard
+
+// 1. Total active members
+$queryAnggota = "SELECT COUNT(*) as total FROM anggota WHERE status='aktif'";
+$resultAnggota = mysqli_query($koneksi, $queryAnggota);
+$totalAnggota = mysqli_fetch_assoc($resultAnggota)['total'];
+
+// 2. Total loans (all statuses)
+$queryPinjaman = "SELECT COUNT(*) as total FROM pinjaman";
+$resultPinjaman = mysqli_query($koneksi, $queryPinjaman);
+$totalPinjaman = mysqli_fetch_assoc($resultPinjaman)['total'];
+
+// 3. Active loans (pending or aktif status)
+$queryPinjamanAktif = "SELECT COUNT(*) as total FROM pinjaman WHERE status_pinjaman IN ('aktif', 'pending')";
+$resultPinjamanAktif = mysqli_query($koneksi, $queryPinjamanAktif);
+$totalPinjamanAktif = mysqli_fetch_assoc($resultPinjamanAktif)['total'];
+
+// Today's date
+$today = date('Y-m-d');
+$queryPengajuanHari = "SELECT COUNT(*) as total FROM pinjaman WHERE DATE(created_at) = '$today'";
+$resultPengajuanHari = mysqli_query($koneksi, $queryPengajuanHari);
+$pengajuanHari = mysqli_fetch_assoc($resultPengajuanHari)['total'];
+
+// This month
+$monthStart = date('Y-m-01');
+$monthEnd = date('Y-m-t');
+$queryPengajuanBulan = "SELECT COUNT(*) as total FROM pinjaman WHERE DATE(created_at) BETWEEN '$monthStart' AND '$monthEnd'";
+$resultPengajuanBulan = mysqli_query($koneksi, $queryPengajuanBulan);
+$pengajuanBulan = mysqli_fetch_assoc($resultPengajuanBulan)['total'];
+
+// Get recent loans (ALL loans, not just aktif) - FIXED HERE
+$queryLoans = "SELECT p.*, a.nama, a.usaha 
+               FROM pinjaman p 
+               JOIN anggota a ON p.anggota_id = a.id 
+               ORDER BY p.created_at DESC 
+               LIMIT 10";
+$resultLoans = mysqli_query($koneksi, $queryLoans);
+
+// Get total loan amount
+$queryTotalAmount = "SELECT SUM(pinjaman) as total FROM pinjaman WHERE status_pinjaman IN ('aktif', 'pending')";
+$resultTotalAmount = mysqli_query($koneksi, $queryTotalAmount);
+$totalAmountRow = mysqli_fetch_assoc($resultTotalAmount);
+$totalAmount = $totalAmountRow['total'] ?? 0;
+?>
+
 <html lang="en">
 <head>
-    <?php
-    require 'auth.php';
-    require 'koneksi.php';
-    
-    // Get statistics for dashboard
-    
-    // 1. Total active members
-    $queryAnggota = "SELECT COUNT(*) as total FROM anggota WHERE status='aktif'";
-    $resultAnggota = mysqli_query($koneksi, $queryAnggota);
-    $totalAnggota = mysqli_fetch_assoc($resultAnggota)['total'];
-    
-    // 2. Total loans (all statuses)
-    $queryPinjaman = "SELECT COUNT(*) as total FROM pinjaman";
-    $resultPinjaman = mysqli_query($koneksi, $queryPinjaman);
-    $totalPinjaman = mysqli_fetch_assoc($resultPinjaman)['total'];
-    
-    // 3. Active loans (pending or aktif status)
-    $queryPinjamanAktif = "SELECT COUNT(*) as total FROM pinjaman WHERE status_pinjaman IN ('aktif', 'pending')";
-    $resultPinjamanAktif = mysqli_query($koneksi, $queryPinjamanAktif);
-    $totalPinjamanAktif = mysqli_fetch_assoc($resultPinjamanAktif)['total'];
-    
-    // Today's date
-    $today = date('Y-m-d');
-    $queryPengajuanHari = "SELECT COUNT(*) as total FROM pinjaman WHERE DATE(created_at) = '$today'";
-    $resultPengajuanHari = mysqli_query($koneksi, $queryPengajuanHari);
-    $pengajuanHari = mysqli_fetch_assoc($resultPengajuanHari)['total'];
-    
-    // This month
-    $monthStart = date('Y-m-01');
-    $monthEnd = date('Y-m-t');
-    $queryPengajuanBulan = "SELECT COUNT(*) as total FROM pinjaman WHERE DATE(created_at) BETWEEN '$monthStart' AND '$monthEnd'";
-    $resultPengajuanBulan = mysqli_query($koneksi, $queryPengajuanBulan);
-    $pengajuanBulan = mysqli_fetch_assoc($resultPengajuanBulan)['total'];
-    
-    // Get recent loans (ALL loans, not just aktif) - FIXED HERE
-    $queryLoans = "SELECT p.*, a.nama, a.usaha 
-                   FROM pinjaman p 
-                   JOIN anggota a ON p.anggota_id = a.id 
-                   ORDER BY p.created_at DESC 
-                   LIMIT 10";
-    $resultLoans = mysqli_query($koneksi, $queryLoans);
-    
-    // Get total loan amount
-    $queryTotalAmount = "SELECT SUM(pinjaman) as total FROM pinjaman WHERE status_pinjaman IN ('aktif', 'pending')";
-    $resultTotalAmount = mysqli_query($koneksi, $queryTotalAmount);
-    $totalAmountRow = mysqli_fetch_assoc($resultTotalAmount);
-    $totalAmount = $totalAmountRow['total'] ?? 0;
-    ?>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
