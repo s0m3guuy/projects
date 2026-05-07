@@ -47,7 +47,7 @@ $resultTotalAmount = mysqli_query($koneksi, $queryTotalAmount);
 $totalAmountRow = mysqli_fetch_assoc($resultTotalAmount);
 $totalAmount = $totalAmountRow['total'] ?? 0;
 ?>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
