@@ -1,30 +1,32 @@
+<?php
+
+    require 'auth.php';
+    require 'koneksi.php';
+    
+    // Get all loan applications
+    $query = "SELECT p.*, a.nama, a.usaha 
+              FROM pinjaman p 
+              JOIN anggota a ON p.anggota_id = a.id 
+              ORDER BY p.created_at DESC 
+              LIMIT 10";
+    $result = mysqli_query($koneksi, $query);
+    
+    // Get total count for pagination
+    $queryCount = "SELECT COUNT(*) as total FROM pinjaman";
+    $resultCount = mysqli_query($koneksi, $queryCount);
+    $rowCount = mysqli_fetch_assoc($resultCount);
+    $totalEntries = $rowCount['total'];
+    
+    // Get active members for selection
+    $queryAnggota = "SELECT * FROM anggota WHERE status='aktif' ORDER BY nama";
+    $resultAnggota = mysqli_query($koneksi, $queryAnggota);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
-    <?php
-    
-        require 'auth.php';
-        require 'koneksi.php';
-        
-        // Get all loan applications
-        $query = "SELECT p.*, a.nama, a.usaha 
-                  FROM pinjaman p 
-                  JOIN anggota a ON p.anggota_id = a.id 
-                  ORDER BY p.created_at DESC 
-                  LIMIT 10";
-        $result = mysqli_query($koneksi, $query);
-        
-        // Get total count for pagination
-        $queryCount = "SELECT COUNT(*) as total FROM pinjaman";
-        $resultCount = mysqli_query($koneksi, $queryCount);
-        $rowCount = mysqli_fetch_assoc($resultCount);
-        $totalEntries = $rowCount['total'];
-        
-        // Get active members for selection
-        $queryAnggota = "SELECT * FROM anggota WHERE status='aktif' ORDER BY nama";
-        $resultAnggota = mysqli_query($koneksi, $queryAnggota);
-    ?>
+
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
