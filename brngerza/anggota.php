@@ -1,35 +1,14 @@
 <?php
-// Display success/error messages
-if(isset($_GET['success'])) {
-    $message = isset($_GET['message']) ? urldecode($_GET['message']) : 'Operasi berhasil!';
-    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-            ' . htmlspecialchars($message) . '
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>';
-}
+    require 'auth.php';
+    require 'koneksi.php';
 
-if(isset($_GET['error'])) {
-    $message = isset($_GET['message']) ? urldecode($_GET['message']) : 'Terjadi kesalahan!';
-    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-            ' . htmlspecialchars($message) . '
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>';
-}
+    $query = "SELECT * FROM anggota ORDER BY joindate DESC LIMIT 10";
+    $result = mysqli_query($koneksi, $query);
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php
-        require 'auth.php';
-        require 'koneksi.php';
-    
-        $query = "SELECT * FROM anggota ORDER BY joindate DESC LIMIT 10";
-        $result = mysqli_query($koneksi, $query);
-    ?>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anggota</title>
@@ -201,19 +180,20 @@ if(isset($_GET['error'])) {
     </style>
 </head>
 <body>
+
     <?php
-    // Display success/error messages in body
+    // Display success/error messages
     if(isset($_GET['success'])) {
         $message = isset($_GET['message']) ? urldecode($_GET['message']) : 'Operasi berhasil!';
-        echo '<div class="alert alert-success alert-dismissible fade show m-3" role="alert">
+        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
                 ' . htmlspecialchars($message) . '
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             </div>';
     }
-
+    
     if(isset($_GET['error'])) {
         $message = isset($_GET['message']) ? urldecode($_GET['message']) : 'Terjadi kesalahan!';
-        echo '<div class="alert alert-danger alert-dismissible fade show m-3" role="alert">
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
                 ' . htmlspecialchars($message) . '
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             </div>';
