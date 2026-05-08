@@ -2,7 +2,7 @@
 require 'auth.php';
 require 'koneksi.php';
 
-// Get all tabungan records
+// Get all tabungan record
 $query = "SELECT t.*, a.nama, a.usaha 
           FROM tabungan t 
           JOIN anggota a ON t.anggota_id = a.id 
