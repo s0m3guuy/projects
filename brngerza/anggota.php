@@ -17,17 +17,19 @@ if(isset($_GET['error'])) {
 }
 ?>
 
-<?php
-    require 'auth.php';
-    require 'koneksi.php';
 
-    $query = "SELECT * FROM anggota ORDER BY joindate DESC LIMIT 10";
-    $result = mysqli_query($koneksi, $query);
-?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+        require 'auth.php';
+        require 'koneksi.php';
+    
+        $query = "SELECT * FROM anggota ORDER BY joindate DESC LIMIT 10";
+        $result = mysqli_query($koneksi, $query);
+    ?>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anggota</title>
