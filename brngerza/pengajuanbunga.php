@@ -236,7 +236,7 @@ $resultAnggota = mysqli_query($koneksi, $queryAnggota);
 <div class="layout">
     <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
-        <img src="gmbr/logo.jpeg" class="logo">
+        <img src="gmbr/logo.png" class="logo">
             <nav>
                 <a href="dashboard.php"><i class="bi bi-speedometer2"></i><span>Dashboard</span></a>
                 <a href="anggota.php"><i class="bi bi-people"></i><span>Anggota</span></a>
