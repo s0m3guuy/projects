@@ -567,7 +567,7 @@ setTimeout(function() {
 </script>
 <nav class="mobile-nav">
     <a href="dashboard.php"><i class="bi bi-speedometer2"></i><span>Dashboard</span></a>
-    <a href="anggota.php"><i class="bi bi-people"></i><span>Anggota</span></a>
+    <a href="anggota.php" class="active"><i class="bi bi-people"></i><span>Anggota</span></a>
     <a href="pengajuan.php"><i class="bi bi-file-earmark"></i><span>Pengajuan</span></a>
     <a href="tabungan.php"><i class="bi bi-wallet2"></i><span>Tabungan</span></a>
     <a href="laporan3.php"><i class="bi bi-graph-up"></i><span>Laporan</span></a>
