@@ -79,7 +79,7 @@
         }
         /* Show a mobile bottom nav instead of sidebar */
         .mobile-nav {
-            display: none;
+            display: flex !important;
         }
     }
     
@@ -126,4 +126,9 @@
         body {
             padding-bottom: 70px;
         }
+    }
+    @media (min-width: 768px) {
+      .mobile-nav {
+        display: none;
+      }
     }
