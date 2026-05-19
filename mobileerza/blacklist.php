@@ -521,7 +521,7 @@ function deleteBlacklist(id, nama) {
         <i class="bi bi-speedometer2"></i>
         <span>Dashboard</span>
     </a>
-    <a href="anggota.php" class="active">
+    <a href="anggota.php" >
         <i class="bi bi-people"></i>
         <span>Anggota</span>
     </a>
@@ -540,7 +540,7 @@ function deleteBlacklist(id, nama) {
       <span>Pengajuan Lunas</span>
     </a>
 
-    <a href="blacklist.php">
+    <a href="blacklist.php" class="active">
       <i class="bi bi-x-circle"></i>
       <span>Blacklist</span>
     </a>
