@@ -333,11 +333,6 @@ if(isset($_GET['error'])) {
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                                    <button type="button" class="btn btn-success"
-                                                            onclick="removeBlacklist(<?= $row['id'] ?>, '<?= htmlspecialchars($row['nama'], ENT_QUOTES) ?>')"
-                                                            data-bs-dismiss="modal">
-                                                        <i class="bi bi-person-check me-1"></i>Hapus dari Blacklist
-                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
