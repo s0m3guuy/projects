@@ -5,6 +5,6 @@ if(!isset($_SESSION['user'])) {
     exit();
 }
 if($_SESSION['role'] != 'admin') {
-    header('Location: ../mobileerza/dashboard.php');
+    header('Location: ../brngerza/dashboard.php');
     exit();
 }
