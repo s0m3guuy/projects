@@ -26,6 +26,7 @@ $resultAnggota = mysqli_query($koneksi, $queryAnggota);
 <!DOCTYPE html>
 <html lang="en">
 <head>
+          
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pengajuan Bunga</title>
@@ -38,7 +39,8 @@ $resultAnggota = mysqli_query($koneksi, $queryAnggota);
 
     <!-- DataTables CSS -->
     <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
-
+          
+          <link rel="stylesheet" href="mobile.css">
     <style>
         body {
             background-color: #f8f9fa;
@@ -923,6 +925,62 @@ document.getElementById('bunga').addEventListener('input', calculateBunga);
 document.getElementById('jangka_waktu').addEventListener('input', calculateBunga);
 document.getElementById('biaya_admin').addEventListener('input', calculateTerima);
 </script>
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mobile-nav">
+    <a href="dashboard.php">
+        <i class="bi bi-speedometer2"></i>
+        <span>Dashboard</span>
+    </a>
+    <a href="anggota.php" >
+        <i class="bi bi-people"></i>
+        <span>Anggota</span>
+    </a>
+    <a href="pengajuan.php">
+        <i class="bi bi-file-earmark"></i>
+        <span>Pengajuan</span>
+    </a>
+  
+    <a href="pengajuanbunga.php" class="active" >
+      <i class="bi bi-percent"></i>
+      <span>Pengajuan Bunga</span>
+    </a>
+  
+    <a href="pengajuanlunas.php">
+      <i class="bi bi-check-circle"></i>
+      <span>Pengajuan Lunas</span>
+    </a>
+
+    <a href="blacklist.php">
+      <i class="bi bi-x-circle"></i>
+      <span>Blacklist</span>
+    </a>
+  
+    <a href="tabungan.php">
+        <i class="bi bi-wallet2"></i>
+        <span>Tabungan</span>
+    </a>
+
+    <a href="libur.php">
+      <i class="bi bi-calendar"></i>
+      <span>Libur</span>
+    </a>
+  
+    <a href="laporan1.php">
+      <i class="bi bi-file-earmark-text"></i>
+      <span>Bayar</span>
+    </a>
+  
+    <a href="laporan2.php">
+      <i class="bi bi-file-earmark-bar-graph"></i>
+      <span>Keuangan</span>
+    </a>
+  
+    <a href="laporan3.php">
+      <i class="bi bi-file-earmark-spreadsheet"></i>
+      <span>Anggota</span>
+    </a>
+  
+</nav>
 
 </body>
 </html>
