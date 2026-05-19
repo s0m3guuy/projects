@@ -21,7 +21,7 @@
 
     <!-- DataTables CSS -->
     <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="mobile.css">
     <style>
         body {
             background-color: #f8f9fa;
@@ -565,6 +565,12 @@ setTimeout(function() {
     $('.alert').alert('close');
 }, 5000);
 </script>
-
+<nav class="mobile-nav">
+    <a href="dashboard.php"><i class="bi bi-speedometer2"></i><span>Dashboard</span></a>
+    <a href="anggota.php"><i class="bi bi-people"></i><span>Anggota</span></a>
+    <a href="pengajuan.php"><i class="bi bi-file-earmark"></i><span>Pengajuan</span></a>
+    <a href="tabungan.php"><i class="bi bi-wallet2"></i><span>Tabungan</span></a>
+    <a href="laporan3.php"><i class="bi bi-graph-up"></i><span>Laporan</span></a>
+</nav>
 </body>
 </html>
