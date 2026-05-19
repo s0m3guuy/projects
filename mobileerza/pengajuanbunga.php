@@ -352,14 +352,7 @@ $resultAnggota = mysqli_query($koneksi, $queryAnggota);
                                                     data-bs-target="#viewModal<?= $row['id'] ?>">
                                                 <i class="bi bi-eye"></i>
                                             </button>
-                                            
-                                            <!-- Update Interest Button -->
-                                            <button class="btn btn-warning btn-sm" 
-                                                    data-bs-toggle="modal" 
-                                                    data-bs-target="#updateBungaModal<?= $row['id'] ?>">
-                                                <i class="bi bi-pencil"></i>
-                                            </button>
-                                            
+                                        
                                             <!-- Print Button -->
                                             <button class="btn btn-success btn-sm" 
                                                     onclick="printBunga(<?= $row['id'] ?>)">
@@ -442,77 +435,6 @@ $resultAnggota = mysqli_query($koneksi, $queryAnggota);
                                         </div>
                                     </div>
 
-                                    <!-- Update Bunga Modal -->
-                                    <div class="modal fade" id="updateBungaModal<?= $row['id'] ?>" tabindex="-1">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <form action="bunga_update.php" method="POST">
-                                                    <input type="hidden" name="id" value="<?= $row['id'] ?>">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">Update Bunga Pinjaman</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Nama Anggota</label>
-                                                            <input type="text" class="form-control readonly-field" 
-                                                                   value="<?= htmlspecialchars($row['nama']) ?>" readonly>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Jumlah Pinjaman</label>
-                                                            <div class="input-group">
-                                                                <span class="input-group-text">Rp</span>
-                                                                <input type="text" class="form-control readonly-field" 
-                                                                       value="<?= number_format($row['pinjaman'], 0, ',', '.') ?>" readonly>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Bunga Saat Ini</label>
-                                                            <div class="input-group">
-                                                                <input type="text" class="form-control readonly-field" 
-                                                                       value="<?= $row['bunga'] ?>" readonly>
-                                                                <span class="input-group-text">%</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Bunga Baru *</label>
-                                                            <div class="input-group">
-                                                                <input type="number" step="0.01" class="form-control" 
-                                                                       name="bunga_baru" id="bunga_baru_<?= $row['id'] ?>" 
-                                                                       required onchange="calculateNewTotal(<?= $row['id'] ?>, <?= $row['pinjaman'] ?>)">
-                                                                <span class="input-group-text">%</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Total Bunga Baru</label>
-                                                            <div class="input-group">
-                                                                <span class="input-group-text">Rp</span>
-                                                                <input type="text" class="form-control readonly-field" 
-                                                                       id="total_bunga_baru_<?= $row['id'] ?>" readonly>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Denda Pinjaman Lama</label>
-                                                            <div class="input-group">
-                                                                <span class="input-group-text">Rp</span>
-                                                                <input type="number" class="form-control" 
-                                                                       name="denda_pinjaman_lama" value="<?= $row['denda_pinjaman_lama'] ?>">
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Alasan Update Bunga</label>
-                                                            <textarea class="form-control" name="alasan_update" rows="3" 
-                                                                      placeholder="Masukkan alasan perubahan bunga..."></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                                        <button type="submit" class="btn btn-primary">Update Bunga</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
                                 <?php endwhile; ?>
                             <?php else: ?>
                                 <tr>
