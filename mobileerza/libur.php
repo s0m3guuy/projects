@@ -183,7 +183,7 @@ if(isset($_GET['error'])) {
                     </a>
                     <div class="nav-dropdown-menu">
                         <a href="laporan1.php"><i class="bi bi-file-earmark-text"></i><span>Lunas</span></a>
-                        <a href="laporan2.php"><i class="bi bi-file-earmark-bar-graph"></i><span>Kurang Bayar/span></a>
+                        <a href="laporan2.php"><i class="bi bi-file-earmark-bar-graph"></i><span>Kurang Bayar</span></a>
                         <a href="laporan3.php"><i class="bi bi-file-earmark-spreadsheet"></i><span>Input Bayar</span></a>
                     </div>
                 </div>
