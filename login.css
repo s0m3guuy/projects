@@ -11,7 +11,7 @@ body{
 
 .base{
     width: 60%;
-    height: 80%;
+    height: 100%;
     display: flex;
 }
 
