@@ -37,8 +37,8 @@ form{
     font-size: 25px;
     color:rgba(236, 134, 0);
 }
-input[name=uname],
-input[name=psw]{
+input[name=username],
+input[name=password]{
     width: 70%;
     padding: 12px 0;
     margin: 8px 0;
