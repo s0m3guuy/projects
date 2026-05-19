@@ -79,7 +79,7 @@
         }
         /* Show a mobile bottom nav instead of sidebar */
         .mobile-nav {
-            display: flex !important;
+            display: none;
         }
     }
     
