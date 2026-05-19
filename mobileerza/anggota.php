@@ -567,11 +567,11 @@ setTimeout(function() {
 </script>
 <!-- MOBILE BOTTOM NAV -->
 <nav class="mobile-nav">
-    <a href="dashboard.php" class="active">
+    <a href="dashboard.php">
         <i class="bi bi-speedometer2"></i>
         <span>Dashboard</span>
     </a>
-    <a href="anggota.php">
+    <a href="anggota.php" class="active">
         <i class="bi bi-people"></i>
         <span>Anggota</span>
     </a>
