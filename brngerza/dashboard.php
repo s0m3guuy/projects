@@ -405,9 +405,9 @@ $totalAmount = $totalAmountRow['total'] ?? 0;
                         <i class="bi bi-chevron-down dropdown-arrow"></i>
                     </a>
                     <div class="nav-dropdown-menu">
-                        <a href="laporan1.php"><i class="bi bi-file-earmark-text"></i><span>Laporan 1</span></a>
-                        <a href="laporan2.php"><i class="bi bi-file-earmark-bar-graph"></i><span>Laporan 2</span></a>
-                        <a href="laporan3.php"><i class="bi bi-file-earmark-spreadsheet"></i><span>Laporan 3</span></a>
+                        <a href="laporan1.php"><i class="bi bi-file-earmark-text"></i><span>Bayar</span></a>
+                        <a href="laporan2.php"><i class="bi bi-file-earmark-bar-graph"></i><span>Keuangan</span></a>
+                        <a href="laporan3.php"><i class="bi bi-file-earmark-spreadsheet"></i><span>Anggota</span></a>
                     </div>
                 </div>
             </nav>
