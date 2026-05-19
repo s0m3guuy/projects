@@ -367,6 +367,127 @@ $totalAmount = $totalAmountRow['total'] ?? 0;
             color: #2d3748;
             margin: 10px 0;
         }
+          /* ── TABLET (max 992px) ── */
+    @media (max-width: 992px) {
+        .sidebar {
+            width: 70px;
+        }
+        .sidebar nav a span {
+            display: none;
+        }
+        .sidebar nav a i {
+            margin-right: 0;
+            font-size: 1.5rem;
+        }
+        .sidebar .logo {
+            width: 50px;
+        }
+        .dashboard-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+    }
+    
+    /* ── MOBILE (max 768px) ── */
+    @media (max-width: 768px) {
+        .sidebar {
+            display: none;
+        }
+        .content {
+            padding: 15px;
+        }
+        .dashboard-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        .stat-card {
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .stat-number {
+            font-size: 1.8rem;
+        }
+        .total-amount {
+            font-size: 1.3rem;
+        }
+        .page-title {
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .page-title h3 {
+            font-size: 1.2rem;
+        }
+        /* Stack recent loans and quick actions vertically */
+        .col-lg-8, .col-lg-4 {
+            width: 100%;
+        }
+        .loan-item {
+            padding: 10px;
+        }
+        .loan-avatar {
+            width: 35px;
+            height: 35px;
+            font-size: 0.8rem;
+            margin-right: 10px;
+        }
+        .loan-amount {
+            font-size: 0.85rem;
+        }
+        .loan-info small {
+            font-size: 0.75rem;
+        }
+        .dashboard-section {
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .stat-row {
+            gap: 10px;
+        }
+        .card-header {
+            padding: 12px 15px;
+            font-size: 0.95rem;
+        }
+        /* Show a mobile bottom nav instead of sidebar */
+        .mobile-nav {
+            display: flex !important;
+        }
+    }
+    
+    /* ── MOBILE BOTTOM NAVBAR ── */
+    .mobile-nav {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #2c3e50;
+        z-index: 1000;
+        padding: 8px 0;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    }
+    .mobile-nav a {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #ecf0f1;
+        text-decoration: none;
+        font-size: 0.65rem;
+        gap: 3px;
+    }
+    .mobile-nav a i {
+        font-size: 1.3rem;
+    }
+    .mobile-nav a.active {
+        color: #667eea;
+    }
+    
+    /* Add padding so content doesn't hide behind bottom nav */
+    @media (max-width: 768px) {
+        body {
+            padding-bottom: 70px;
+        }
+    }
     </style>
 </head>
 <body>
@@ -408,7 +529,6 @@ $totalAmount = $totalAmountRow['total'] ?? 0;
                         <a href="laporan1.php"><i class="bi bi-file-earmark-text"></i><span>Bayar</span></a>
                         <a href="laporan2.php"><i class="bi bi-file-earmark-bar-graph"></i><span>Keuangan</span></a>
                         <a href="laporan3.php"><i class="bi bi-file-earmark-spreadsheet"></i><span>Anggota</span></a>
-                    </div>
                     </div>
                 </div>
             </nav>
@@ -678,6 +798,28 @@ setTimeout(function() {
     window.location.reload();
 }, 60000);
 </script>
-
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mobile-nav">
+    <a href="dashboard.php" class="active">
+        <i class="bi bi-speedometer2"></i>
+        <span>Dashboard</span>
+    </a>
+    <a href="anggota.php">
+        <i class="bi bi-people"></i>
+        <span>Anggota</span>
+    </a>
+    <a href="pengajuan.php">
+        <i class="bi bi-file-earmark"></i>
+        <span>Pengajuan</span>
+    </a>
+    <a href="tabungan.php">
+        <i class="bi bi-wallet2"></i>
+        <span>Tabungan</span>
+    </a>
+    <a href="laporan3.php">
+        <i class="bi bi-graph-up"></i>
+        <span>Laporan</span>
+    </a>
+</nav>
 </body>
 </html>
