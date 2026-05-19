@@ -1,5 +1,14 @@
 <?php
 session_start();
+// If already logged in, redirect based on role
+if(isset($_SESSION['user'])) {
+    if($_SESSION['role'] == 'admin') {
+        header('Location: brngerza/dashboard.php');
+    } else {
+        header('Location: mobileerza/dashboard.php');
+    }
+    exit();
+}
 require 'koneksi.php';
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
