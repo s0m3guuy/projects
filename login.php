@@ -1,27 +1,22 @@
 <?php
 session_start();
 require 'koneksi.php';
-
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
-
     $query = "SELECT * FROM users WHERE username = ?";
     $stmt = mysqli_prepare($koneksi, $query);
     mysqli_stmt_bind_param($stmt, 's', $username);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     $user = mysqli_fetch_assoc($result);
-
     if($user && password_verify($password, $user['password'])) {
         $_SESSION['user'] = $user['username'];
-        $_SESSION['role'] = $user['role'];  // store role
-
-        // Redirect based on role
+        $_SESSION['role'] = $user['role'];
         if($user['role'] == 'admin') {
             header('Location: brngerza/dashboard.php');
         } else {
-            header('Location: mobileerza/dashboard.php'); // or wherever regular users go
+            header('Location: mobileerza/dashboard.php');
         }
         exit();
     } else {
@@ -31,32 +26,37 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PRI Link</title>
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
-<?php
-if (isset($_SESSION['error'])) {
-    echo "<script>alert('{$_SESSION['error']}');</script>";
-    unset($_SESSION['error']);
-}
-?>
+    <?php if(isset($_GET['error'])): ?>
+        <div style="position:fixed;top:0;left:0;right:0;background:#f8d7da;color:#721c24;padding:12px;text-align:center;font-size:0.95rem;z-index:999;">
+            <?= htmlspecialchars(urldecode($_GET['message'] ?? 'Terjadi kesalahan!')) ?>
+        </div>
+    <?php endif; ?>
+
     <div class="base">
-        <div class="title"><h2>Login Form</h2></div>
+        <div class="title">
+            <h2>PRI Link</h2>
+        </div>
         <div class="container">
-            <form method="post">
+            <form method="POST">
                 <div class="uname" style="padding:7px">
-                    <label for="uname"><b>Username</b></label><br>
-                    <input type="text" placeholder="Enter Username" name="username" required>
+                    <label for="username"><b>Username</b></label><br>
+                    <input type="text" placeholder="Enter Username" name="username" id="username" required>
                 </div>
                 <br>
                 <div class="psw" style="padding:7px">
-                    <label for="psw"><b>Password</b></label><br>
-                    <input type="password" placeholder="Enter Password" name="password" required>
+                    <label for="password"><b>Password</b></label><br>
+                    <input type="password" placeholder="Enter Password" name="password" id="password" required>
                 </div>
                 <br>
-                <button type="submit" name="login">Login</button>
+                <button type="submit">Login</button>
             </form>
         </div>
     </div>
