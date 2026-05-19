@@ -4,7 +4,7 @@ if(!isset($_SESSION['user'])) {
     header('Location: ../login.php');
     exit();
 }
-if($_SESSION['role'] != 'admin') {
-    header('Location: ../mobileerza/dashboard.php');
+if($_SESSION['role'] == 'admin') {
+    header('Location: ../brngerza/dashboard.php');
     exit();
 }
