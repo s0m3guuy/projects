@@ -543,7 +543,7 @@ function deleteLibur(id) {
         <i class="bi bi-speedometer2"></i>
         <span>Dashboard</span>
     </a>
-    <a href="anggota.php" class="active">
+    <a href="anggota.php">
         <i class="bi bi-people"></i>
         <span>Anggota</span>
     </a>
@@ -572,7 +572,7 @@ function deleteLibur(id) {
         <span>Tabungan</span>
     </a>
 
-    <a href="libur.php">
+    <a href="libur.php" class="active">
       <i class="bi bi-calendar"></i>
       <span>Libur</span>
     </a>
