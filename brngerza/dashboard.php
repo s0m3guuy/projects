@@ -613,9 +613,6 @@ $totalAmount = $totalAmountRow['total'] ?? 0;
                         <a href="pengajuan.php" class="btn btn-outline-success btn-lg">
                             <i class="bi bi-file-earmark-plus me-2"></i>Pengajuan Baru
                         </a>
-                        <a href="laporan.php" class="btn btn-outline-info btn-lg">
-                            <i class="bi bi-graph-up me-2"></i>Lihat Laporan
-                        </a>
                     </div>
                 </div>
 
