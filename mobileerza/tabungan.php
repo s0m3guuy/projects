@@ -496,7 +496,7 @@ function deleteTabungan(id) {
         <i class="bi bi-speedometer2"></i>
         <span>Dashboard</span>
     </a>
-    <a href="anggota.php" class="active">
+    <a href="anggota.php">
         <i class="bi bi-people"></i>
         <span>Anggota</span>
     </a>
@@ -520,7 +520,7 @@ function deleteTabungan(id) {
       <span>Blacklist</span>
     </a>
   
-    <a href="tabungan.php">
+    <a href="tabungan.php" class="active">
         <i class="bi bi-wallet2"></i>
         <span>Tabungan</span>
     </a>
