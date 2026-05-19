@@ -297,11 +297,6 @@ if(isset($_GET['error'])) {
                                                     data-bs-target="#viewModal<?= $row['id'] ?>">
                                                 <i class="bi bi-eye"></i>
                                             </button>
-                                            <button class="btn btn-danger btn-sm"
-                                                    onclick="deleteTabungan(<?= $row['id'] ?>)"
-                                                    title="Hapus">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
                                         </td>
                                     </tr>
 
