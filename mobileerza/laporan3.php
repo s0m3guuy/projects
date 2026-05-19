@@ -139,7 +139,6 @@ if(isset($_GET['error'])){$msg=urldecode($_GET['message']??'Error!');echo'<div c
                             <td><?=date('d F Y',strtotime($row['tanggal_bayar']))?></td>
                             <td class="action-buttons">
                                 <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#viewModal<?=$row['id']?>"><i class="bi bi-eye"></i></button>
-                                <button class="btn btn-danger btn-sm" onclick="deletePayment(<?=$row['id']?>)"><i class="bi bi-trash"></i></button>
                             </td>
                         </tr>
                         <!-- View Modal -->
