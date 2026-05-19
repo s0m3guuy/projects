@@ -286,11 +286,6 @@ if(isset($_GET['error'])) {
                                                 <i class="bi bi-check-circle"></i>
                                             </button>
                                             <?php endif; ?>
-                                            <button class="btn btn-danger btn-sm"
-                                                    onclick="deleteLibur(<?= $row['id'] ?>)"
-                                                    title="Hapus">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
                                         </td>
                                     </tr>
 
