@@ -336,13 +336,6 @@
                                                 data-bs-target="#viewModal<?= $row['id'] ?>">
                                             <i class="bi bi-eye"></i>
                                         </button>
-                                        
-                                        <!-- Edit Button -->
-                                        <button class="btn btn-warning btn-sm" 
-                                                data-bs-toggle="modal" 
-                                                data-bs-target="#editModal<?= $row['id'] ?>">
-                                            <i class="bi bi-pencil"></i>
-                                        </button>
                                     </td>
                                 </tr>
 
