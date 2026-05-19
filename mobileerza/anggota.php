@@ -409,55 +409,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Edit Modal -->
-                                <div class="modal fade" id="editModal<?= $row['id'] ?>" tabindex="-1">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <form action="anggota_edit.php" method="POST">
-                                                <input type="hidden" name="id" value="<?= $row['id'] ?>">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title">Edit Anggota</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Nama *</label>
-                                                        <input type="text" class="form-control" name="nama" value="<?= $row['nama'] ?>" required>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Jenis Usaha</label>
-                                                        <input type="text" class="form-control" name="usaha" value="<?= $row['usaha'] ?>">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="form-label">No Telephone *</label>
-                                                        <input type="text" class="form-control" name="no_telp" value="<?= $row['no_telp'] ?>" required>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Email</label>
-                                                        <input type="email" class="form-control" name="email" value="<?= $row['email'] ?>">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Alamat</label>
-                                                        <textarea class="form-control" name="alamat" rows="2"><?= htmlspecialchars($row['alamat']) ?></textarea>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="form-label">NIK</label>
-                                                        <input type="text" class="form-control" name="nik" value="<?= $row['NIK'] ?>">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="form-label">TTL</label>
-                                                        <input type="text" class="form-control" name="ttl" value="<?= $row['ttl'] ?>">
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                                    <button type="submit" class="btn btn-primary">Update</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
                             <?php endwhile; ?>
                         </tbody>
                     </table>
