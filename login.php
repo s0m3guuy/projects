@@ -48,12 +48,12 @@ if (isset($_SESSION['error'])) {
             <form method="post">
                 <div class="uname" style="padding:7px">
                     <label for="uname"><b>Username</b></label><br>
-                    <input type="text" placeholder="Enter Username" name="uname" required>
+                    <input type="text" placeholder="Enter Username" name="username" required>
                 </div>
                 <br>
                 <div class="psw" style="padding:7px">
                     <label for="psw"><b>Password</b></label><br>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    <input type="password" placeholder="Enter Password" name="password" required>
                 </div>
                 <br>
                 <button type="submit" name="login">Login</button>
