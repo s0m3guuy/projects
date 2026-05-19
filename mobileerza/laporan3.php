@@ -285,7 +285,7 @@ setTimeout(function(){$('.alert').alert('close');},5000);
         <i class="bi bi-speedometer2"></i>
         <span>Dashboard</span>
     </a>
-    <a href="anggota.php" class="active">
+    <a href="anggota.php" >
         <i class="bi bi-people"></i>
         <span>Anggota</span>
     </a>
@@ -329,7 +329,7 @@ setTimeout(function(){$('.alert').alert('close');},5000);
       <span>Keuangan</span>
     </a>
   
-    <a href="laporan3.php">
+    <a href="laporan3.php" class="active">
       <i class="bi bi-file-earmark-spreadsheet"></i>
       <span>Anggota</span>
     </a>
