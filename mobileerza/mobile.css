@@ -95,7 +95,8 @@
         right: 0;
         background: #2c3e50;
         z-index: 1000;
-        padding: 8px 0;
+        gap: 8px;          /* space between items */
+        padding: 0 16px;   /* breathing room on left & right edges */
         box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
     }
     .mobile-nav::-webkit-scrollbar {
@@ -103,7 +104,8 @@
     }
     .mobile-nav a {
         flex: 1;
-        flex-shrink: 0; /* prevents items from squishing to fit */
+        flex-shrink: 0;
+        padding: 8px 16px; /* space inside each item */
         display: flex;
         flex-direction: column;
         align-items: center;
