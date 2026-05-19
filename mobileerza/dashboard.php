@@ -694,14 +694,47 @@ setTimeout(function() {
         <i class="bi bi-file-earmark"></i>
         <span>Pengajuan</span>
     </a>
+  
+    <a href="pengajuanbunga.php">
+      <i class="bi bi-percent"></i>
+      <span>Pengajuan Bunga</span>
+    </a>
+  
+    <a href="pengajuanlunas.php">
+      <i class="bi bi-check-circle"></i>
+      <span>Pengajuan Lunas</span>
+    </a>
+
+    <a href="blacklist.php">
+      <i class="bi bi-x-circle"></i>
+      <span>Blacklist</span>
+    </a>
+  
     <a href="tabungan.php">
         <i class="bi bi-wallet2"></i>
         <span>Tabungan</span>
     </a>
-    <a href="laporan3.php">
-        <i class="bi bi-graph-up"></i>
-        <span>Laporan</span>
+
+    <a href="libur.php">
+      <i class="bi bi-calendar"></i>
+      <span>Libur</span>
     </a>
+  
+    <a href="laporan1.php">
+      <i class="bi bi-file-earmark-text"></i>
+      <span>Bayar</span>
+    </a>
+  
+    <a href="laporan2.php">
+      <i class="bi bi-file-earmark-bar-graph"></i>
+      <span>Keuangan</span>
+    </a>
+  
+    <a href="laporan3.php">
+      <i class="bi bi-file-earmark-spreadsheet"></i>
+      <span>Anggota</span>
+    </a>
+  
 </nav>
 </body>
 </html>
