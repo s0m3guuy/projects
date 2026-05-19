@@ -355,13 +355,6 @@
                                             <i class="bi bi-eye"></i>
                                         </button>
                                         
-                                        <!-- Edit Button -->
-                                        <button class="btn btn-warning btn-sm" 
-                                                data-bs-toggle="modal" 
-                                                data-bs-target="#editModal<?= $row['id'] ?>">
-                                            <i class="bi bi-pencil"></i>
-                                        </button>
-                                        
                                         <!-- Approve Button -->
                                         <button class="btn btn-success btn-sm" 
                                                 onclick="updateStatus(<?= $row['id'] ?>, 'aktif')">
@@ -436,47 +429,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Edit Modal -->
-                                <div class="modal fade" id="editModal<?= $row['id'] ?>" tabindex="-1">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <form action="pinjaman_update.php" method="POST">
-                                                <input type="hidden" name="id" value="<?= $row['id'] ?>">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title">Edit Pengajuan Pinjaman</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Jumlah Pinjaman</label>
-                                                        <input type="number" class="form-control" name="pinjaman" value="<?= $row['pinjaman'] ?>" required>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Jangka Waktu (Kali)</label>
-                                                        <input type="number" class="form-control" name="jangka_waktu" value="<?= $row['jangka_waktu'] ?>" required>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Bunga (%)</label>
-                                                        <input type="number" step="0.01" class="form-control" name="bunga" value="<?= $row['bunga'] ?>" required>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Status</label>
-                                                        <select class="form-control" name="status_pinjaman">
-                                                            <option value="pending" <?= $row['status_pinjaman'] == 'pending' ? 'selected' : '' ?>>Menunggu Persetujuan</option>
-                                                            <option value="aktif" <?= $row['status_pinjaman'] == 'aktif' ? 'selected' : '' ?>>Sudah Disetujui</option>
-                                                            <option value="rejected" <?= $row['status_pinjaman'] == 'rejected' ? 'selected' : '' ?>>Ditolak</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                                    <button type="submit" class="btn btn-primary">Update</button>
-                                                </div>
-                                            </form>
                                         </div>
                                     </div>
                                 </div>
