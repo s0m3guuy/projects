@@ -1,22 +1,32 @@
 <?php
 session_start();
-require 'db.php';
+require 'koneksi.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = trim($_POST['username']);
-    $password = trim($_POST['password']);
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-    $stmt = $pdo->prepare("SELECT * FROM user WHERE username = ?");
-    $stmt->execute([$username]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    if ($user && $user['password'] === $password) {
-        $_SESSION['username'] = $user['username'];
+    $query = "SELECT * FROM users WHERE username = ?";
+    $stmt = mysqli_prepare($koneksi, $query);
+    mysqli_stmt_bind_param($stmt, 's', $username);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    $user = mysqli_fetch_assoc($result);
 
-        header('Location: /dashboard.php');
+    if($user && password_verify($password, $user['password'])) {
+        $_SESSION['user'] = $user['username'];
+        $_SESSION['role'] = $user['role'];  // store role
+
+        // Redirect based on role
+        if($user['role'] == 'admin') {
+            header('Location: dashboard.php');
+        } else {
+            header('Location: laporan3.php'); // or wherever regular users go
+        }
         exit();
-
     } else {
-        $error = "Invalid username or password.";
+        header('Location: login.php?error=1&message=Username+atau+password+salah');
+        exit();
     }
 }
 ?>
