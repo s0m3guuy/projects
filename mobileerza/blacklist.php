@@ -273,19 +273,7 @@ if(isset($_GET['error'])) {
                                                 <i class="bi bi-eye"></i>
                                             </button>
 
-                                            <!-- Remove from Blacklist Button -->
-                                            <button class="btn btn-success btn-sm"
-                                                    onclick="removeBlacklist(<?= $row['id'] ?>, '<?= htmlspecialchars($row['nama'], ENT_QUOTES) ?>')"
-                                                    title="Hapus dari Blacklist">
-                                                <i class="bi bi-person-check"></i>
-                                            </button>
 
-                                            <!-- Delete permanently -->
-                                            <button class="btn btn-danger btn-sm"
-                                                    onclick="deleteBlacklist(<?= $row['id'] ?>, '<?= htmlspecialchars($row['nama'], ENT_QUOTES) ?>')"
-                                                    title="Hapus Permanen">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
                                         </td>
                                     </tr>
 
